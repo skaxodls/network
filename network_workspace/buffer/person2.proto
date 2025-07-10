@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message Person2{
+  string name=1;
+  int32 age=2;//age 필드를 정의합니다.
+}
