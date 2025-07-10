@@ -20,7 +20,7 @@ def recvall(sock, n):
       if not packet:
         return None
       data.extend(packet)
-      return data
+  return data
 
 def start_server(host, port):
   with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:

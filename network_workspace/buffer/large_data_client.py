@@ -18,7 +18,7 @@ def send_large_data(sock, data):
         if sent==0:
             raise RuntimeError("socket connetion broken")
         total_sent+=sent
-        print(f"Sent {total_sent} bytes")
+    print(f"Sent {total_sent} bytes")
 
 def start_client():
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client_socket:

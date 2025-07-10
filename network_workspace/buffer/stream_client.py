@@ -10,7 +10,14 @@ def start_client():
 
 def send_message(sock, message):
   message_len=len(message)
-  sock.sendall(struct.pack('!I', message_len))
+  sock.sendall(struct.pack('!I', message_len))#struct.pack은 메시지를 byte로 변환하는 역할을 한다. 
+  """
+  | 기호  | 의미                               |
+  | --- | -------------------------------- |
+  | `!` | **네트워크 바이트 순서 (Big-endian)** 사용  |
+  | `I` | **4바이트 부호 없는 정수 (unsigned int)** |
+
+  """
   sock.sendall(message.encode())
 
 def receive_message(sock):
@@ -27,7 +34,7 @@ def recvall(sock, n):
       if not packet:
         return None
       data.extend(packet)
-      return data
+  return data
   
 if __name__ == "__main__":
     start_client()  # Example usage
