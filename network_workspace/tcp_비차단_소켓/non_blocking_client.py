@@ -35,6 +35,7 @@ def start_client():
 
     large_data=b"hello, non-blocking TCP!"*100000 # 약 2.6MB
     non_blocking_send(client_socket, large_data)
+    received_data=non_blocking_receive(client_socket)
     print(f"Received {len(large_data)} bytes")
 
 if __name__=="__main__":
