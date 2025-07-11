@@ -2,14 +2,14 @@ import socket
 import time
 
 def set_socket_buffer_size(sock, send_size, recv_size):
-  sock.setsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF,send_size)
-  sock.setsockopt(socket.SOL_SOCKET, socket.SO_RCVBUF, recv_size)
+    sock.setsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF,send_size)
+    sock.setsockopt(socket.SOL_SOCKET, socket.SO_RCVBUF, recv_size)
 
 
 def get_socket_buffer_size(sock):
-  send_size=sock.getsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF)
-  recv_size=sock.getsockopt(socket.SOL_SOCKET, socket.SO_RCVBUF)
-  return send_size, recv_size
+    send_size=sock.getsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF)
+    recv_size=sock.getsockopt(socket.SOL_SOCKET, socket.SO_RCVBUF)
+    return send_size, recv_size
 
 def receive_large_data(sock, buffer_size=10240):
     data=b""
